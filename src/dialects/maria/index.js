@@ -130,8 +130,9 @@ function parseType(value, type) {
   }
   switch (type) {
     case 'DATETIME':
-    case 'TIMESTAMP':
       return new Date(value);
+    case 'TIMESTAMP':
+      return new Date(value + ' UTC');
     case 'INTEGER':
       return parseInt(value, 10);
     default:
